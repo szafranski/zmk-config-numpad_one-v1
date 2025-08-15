@@ -12,60 +12,63 @@
         keymap {
                 compatible = "zmk,keymap";
 
+                /* ------- Base: 4x5 numpad -------
+                 *  |  Tab |   /   |   *   |   -   |
+                 *  |   7  |   8   |   9   |   +   |
+                 *  |   4  |   5   |   6   |   +   |
+                 *  |   1  |   2   |   3   | Enter |
+                 *  |   0  |   0   |   .   | Enter |
+                 */
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | SPC | LWR | SPC |   | SPC | RSE  | SPC |
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp SPACE &mo 1 &kp SPACE   &kp SPACE &mo 2 &kp SPACE
+                                &kp TAB           &kp KP_DIVIDE    &kp KP_MULTIPLY &kp KP_MINUS
+                                &kp KP_7          &kp KP_8         &kp KP_9        &kp KP_PLUS
+                                &kp KP_4          &kp KP_5         &kp KP_6        &kp KP_PLUS
+                                &kp KP_1          &kp KP_2         &kp KP_3        &kp KP_ENTER
+                                &kp KP_0          &kp KP_0         &kp KP_DOT      &kp KP_ENTER
                         >;
                 };
+
+                /* ------- Lower: navigation / Bluetooth / editing -------
+                 *  | BTCLR| Home |  Up  | PgUp |
+                 *  | BT1  | Left | Down | Rght |
+                 *  | BT2  |  End | Ins  | Del  |
+                 *  | BT3  |      |      |      |
+                 *  | LWR  |      |      |      |
+                 */
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
                         display-name = "Lower";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                                &bt BT_CLR        &kp HOME         &kp UP          &kp PG_UP
+                                &bt BT_SEL 0      &kp LEFT         &kp DOWN        &kp RIGHT
+                                &bt BT_SEL 1      &kp END          &kp INS         &kp DEL
+                                &bt BT_SEL 2      &trans           &trans          &trans
+                                &mo 1             &trans           &trans          &trans
                         >;
                 };
 
+                /* ------- Raise: symbols / F-keys -------
+                 *  |  Esc |  F1  |  F2  |  F3  |
+                 *  |  F4  |  F5  |  F6  |  F7  |
+                 *  |  F8  |  F9  |  F10 |  F11 |
+                 *  |  F12 |  (   |  )   |  =   |
+                 *  |  RSE |  -   |  _   |  `   |
+                 */
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
                         display-name = "Raise";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                                &kp ESC           &kp F1           &kp F2          &kp F3
+                                &kp F4            &kp F5           &kp F6          &kp F7
+                                &kp F8            &kp F9           &kp F10         &kp F11
+                                &kp F12           &kp LPAR         &kp RPAR        &kp EQUAL
+                                &mo 2             &kp MINUS        &kp UNDER       &kp GRAVE
                         >;
                 };
 
-                extra_1 {
-                        status = "reserved";
-                };
-
-                extra_2 {
-                        status = "reserved";
-                };
-
-                extra_3 {
-                        status = "reserved";
-                };
+                /* keep these reserved if your shield expects them */
+                extra_1 { status = "reserved"; };
+                extra_2 { status = "reserved"; };
+                extra_3 { status = "reserved"; };
         };
 };
