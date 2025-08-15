@@ -26,6 +26,7 @@
 &kp C     &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS
 &kp KP_7  &kp KP_8       &kp KP_9         &kp KP_PLUS
 &kp B     &kp KP_5       &kp KP_6         &kp KP_PLUS
+&kp A     &kp KP_5       &kp KP_6         &kp KP_PLUS
             >;
         };
 
@@ -43,6 +44,7 @@
 &bt BT_CLR    &kp HOME  &kp UP    &kp PG_UP
 &bt BT_SEL 0  &kp LEFT  &kp DOWN  &kp RIGHT
 &bt BT_SEL 1  &kp END   &kp INS   &kp DEL
+&kp B     &kp KP_5       &kp KP_6         &kp KP_PLUS
             >;
         };
 
@@ -60,6 +62,7 @@
 &kp ESC  &kp F1  &kp F2   &kp F3
 &kp F4   &kp F5  &kp F6   &kp F7
 &kp F8   &kp F9  &kp F10  &kp F11
+&kp B     &kp KP_5       &kp KP_6         &kp KP_PLUS
             >;
         };
 
