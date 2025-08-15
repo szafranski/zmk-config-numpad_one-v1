@@ -23,8 +23,8 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB   &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp KP_7  &kp KP_8  &kp KP_9    &kp KP_PLUS   &kp KP_4  &kp KP_5  &kp KP_6  &kp KP_PLUS
-&kp KP_1  &kp KP_2       &kp KP_3         &kp KP_ENTER  &kp KP_0  &kp KP_0  &kp KP_DOT  &kp KP_ENTER
+&kp TAB  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp KP_7  &kp KP_8  &kp KP_9    &kp KP_PLUS   &kp KP_4  &kp KP_5  &kp KP_6  &kp KP_PLUS
+&kp A    &kp KP_2       &kp KP_3         &kp KP_ENTER  &kp KP_0  &kp KP_0  &kp KP_DOT  &kp KP_ENTER
             >;
         };
 
